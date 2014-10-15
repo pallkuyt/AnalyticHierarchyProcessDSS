@@ -15,8 +15,19 @@ namespace AnalyticHierarchyProcessDSS.WolframEngine
     {
         public static IUnityContainer CreateContainer()
         {
+            IKernelLink mathEngine = null;
+
+            try
+            {
+                MathLinkFactory.CreateKernelLink();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("WolframMathematica wasn't found on machine.", e);
+            }
+
             IUnityContainer container = new UnityContainer()
-                .RegisterInstance(MathLinkFactory.CreateKernelLink())
+                .RegisterInstance(mathEngine)
                 .RegisterType<IMinimizationStrategy, X2MinimizationStrategy>("X2")
                 .RegisterType<IMinimizationStrategy, LeastSquaresMinimizationStrategy>("LeastSquares");
 

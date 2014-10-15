@@ -105,7 +105,7 @@ namespace AnalyticHierarchyProcessDSS.Core.Fuzzy
                 {
                     for (int i = 0; i < stepsCount; i++)
                     {
-                        product *= Math.Pow(_alphaWeights[i * _alphaSamplingStep].ConsistencyIndex, alphaNormalize[i]);
+                        product *= Math.Pow(_alphaWeights[i*_alphaSamplingStep].ConsistencyIndex, alphaNormalize[i]);
                     }
                     _consistencyIndex = product; 
                 }

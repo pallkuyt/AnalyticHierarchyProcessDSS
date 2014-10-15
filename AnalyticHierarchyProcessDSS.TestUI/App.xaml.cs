@@ -1,4 +1,6 @@
-﻿using AnalyticHierarchyProcessDSS.Core.Common;
+﻿using System.Threading;
+using System.Windows.Threading;
+using AnalyticHierarchyProcessDSS.Core.Common;
 using AnalyticHierarchyProcessDSS.Core.Fuzzy;
 using AnalyticHierarchyProcessDSS.Core.Network;
 using AnalyticHierarchyProcessDSS.Core.Precise;
@@ -24,6 +26,8 @@ namespace AnalyticHierarchyProcessDSS.TestUI
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            DispatcherUnhandledException += OnDispatcherUnhandledException;
+
             IUnityContainer container = new UnityContainer();
             container.RegisterInstance<IUnityContainer>(container);
             container.RegisterInstance<IEvaluationEngine>(new WolframMathematicaEvaluationEngine());
@@ -41,6 +45,15 @@ namespace AnalyticHierarchyProcessDSS.TestUI
 
             var mainWindow = container.Resolve<MainWindow>();
             mainWindow.Show();
+        }
+
+        void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            var error = e.Exception.Message;
+
+            MessageBox.Show(error);
+
+            App.Current.Shutdown();
         }
     }
 }
