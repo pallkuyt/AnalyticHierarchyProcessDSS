@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace AnalyticHierarchyProcessDSS.Entities
 
                 for (int j = 0; j < Size; j++)
                 {
-                    builder.Append(_matrix[i, j]);
+                    builder.Append(String.Format(CultureInfo.InvariantCulture, "{0}", _matrix[i, j]));
 
                     if (j != Size - 1)
                         builder.Append(", ");

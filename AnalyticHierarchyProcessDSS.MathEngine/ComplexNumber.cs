@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,10 @@ namespace AnalyticHierarchyProcessDSS.WolframEngine
             string imaginary = parts.FirstOrDefault(i => i.Contains('I'));
 
             if (real != null)
-                _real = double.Parse(real);
+                _real = double.Parse(real, CultureInfo.InvariantCulture);
 
             if (imaginary != null)
-                _imaginary = double.Parse(imaginary.Replace("*I", ""));
+                _imaginary = double.Parse(imaginary.Replace("*I", ""), CultureInfo.InvariantCulture);
 
             var minusCount = complexNumber.Count(c => c == '-');
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -46,10 +47,10 @@ namespace AnalyticHierarchyProcessDSS.Entities
             {
                 for (int i = 0; i < _data.Length - 1; i++)
                 {
-                    builder.AppendFormat("{0}, ", _data[i]);
+                    builder.AppendFormat(CultureInfo.InvariantCulture, "{0}, ", _data[i]);
                 }
 
-                builder.Append(_data[_data.Length - 1]);
+                builder.AppendFormat(CultureInfo.InvariantCulture, "{0}", _data[_data.Length - 1]);
             }
 
             builder.Append('}');
