@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{398E4EE9-DB53-4090-95EE-28894824C4E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnalyticHierarchyProcessDSS.TestUI</RootNamespace>
+    <AssemblyName>AnalyticHierarchyProcessDSS.TestUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\NavigationCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converters\ClusterComparisonHeaderConverter.cs" />
+    <Compile Include="Converters\CrossClusterDependencyHeaderConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
+    <Compile Include="Converters\NavigationButtonVisibilityConverter.cs" />
+    <Compile Include="Converters\VerbalMatrixModifiabilityConverter.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Interfaces\IPairwiseComparisonMatrixInitializationViewModel.cs" />
+    <Compile Include="Interfaces\IParentCollectionRemovable.cs" />
+    <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="MatrixExtensions.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ClusterMatricesInitializationViewModel.cs" />
+    <Compile Include="ViewModels\ClusterViewModel.cs" />
+    <Compile Include="ViewModels\CrossClusterDependencyViewModel.cs" />
+    <Compile Include="ViewModels\NetworkInitializationViewModel.cs" />
+    <Compile Include="ViewModels\SuperMatrixViewModel.cs" />
+    <Compile Include="Views\ClusterMatricesInitializationView.xaml.cs">
+      <DependentUpon>ClusterMatricesInitializationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ElementMatricesInitializationView.xaml.cs">
+      <DependentUpon>ElementMatricesInitializationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ElementMatricesInitializationViewModel.cs" />
+    <Compile Include="Views\CrossClusterDependencyView.xaml.cs">
+      <DependentUpon>CrossClusterDependencyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuperMatrixView.xaml.cs">
+      <DependentUpon>SuperMatrixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeightsMatricesView.xaml.cs">
+      <DependentUpon>WeightsMatricesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WeightsMatricesViewModel.cs" />
+    <Compile Include="Views\PairwiseComparisonMatrixView.xaml.cs">
+      <DependentUpon>PairwiseComparisonMatrixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ClusterElementViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NetworkElementViewModel.cs" />
+    <Compile Include="Views\NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkInitializationView.xaml.cs">
+      <DependentUpon>NetworkInitializationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrapper.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\ClusterMatricesInitializationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ElementMatricesInitializationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CrossClusterDependencyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SuperMatrixView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeightsMatricesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PairwiseComparisonMatrixView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NetworkInitializationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnalyticHierarchyProcessDSS.Core\AnalyticHierarchyProcessDSS.Core.csproj">
+      <Project>{5a777c9a-2382-4d5a-8d65-8bc7a6c9871f}</Project>
+      <Name>AnalyticHierarchyProcessDSS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnalyticHierarchyProcessDSS.Entities\AnalyticHierarchyProcessDSS.Entities.csproj">
+      <Project>{066a266d-427a-4675-b553-cba8204566fa}</Project>
+      <Name>AnalyticHierarchyProcessDSS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnalyticHierarchyProcessDSS.MathEngine\AnalyticHierarchyProcessDSS.WolframEngine.csproj">
+      <Project>{6be64520-ece9-4244-a2c8-81af55b0c344}</Project>
+      <Name>AnalyticHierarchyProcessDSS.WolframEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Windows-Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Arrow Left-354.png" />
+    <Resource Include="Assets\Arrow Right-356.png" />
+    <Resource Include="Assets\Delete-477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

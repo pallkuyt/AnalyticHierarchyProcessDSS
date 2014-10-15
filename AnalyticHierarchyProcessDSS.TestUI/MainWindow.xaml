@@ -1,0 +1,17 @@
+﻿<Window x:Class="AnalyticHierarchyProcessDSS.TestUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:testUi="clr-namespace:AnalyticHierarchyProcessDSS.TestUI"
+        xmlns:view="clr-namespace:AnalyticHierarchyProcessDSS.TestUI.Views"
+        xmlns:viewModel="clr-namespace:AnalyticHierarchyProcessDSS.TestUI.ViewModels"
+        Title="СИСТЕМА ПІДТРИМКИ ПРИЙНЯТТЯ РІШЕНЬ НА ОСНОВІ МАІ" Height="750" Width="1280">
+    <Window.Resources>
+        <testUi:DebugConverter x:Key="DebugConverter"></testUi:DebugConverter>
+    </Window.Resources>
+    <!--<Window.DataContext>
+        <viewModel:MainWindowViewModel />
+    </Window.DataContext>-->
+    <Grid>
+        <view:NavigationPage DataContext="{Binding CurrentViewModel}" />
+    </Grid>
+</Window>

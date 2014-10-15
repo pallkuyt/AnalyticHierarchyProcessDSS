@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A777C9A-2382-4D5A-8D65-8BC7A6C9871F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnalyticHierarchyProcessDSS.Core</RootNamespace>
+    <AssemblyName>AnalyticHierarchyProcessDSS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\ExternalLibraries\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IReproachResolutionStrategy.cs" />
+    <Compile Include="Common\IWeightsResolutionStrategy.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Fuzzy\FuzzyNumber.cs" />
+    <Compile Include="Fuzzy\FuzzyPairwiseComparisonMatrix.cs" />
+    <Compile Include="Fuzzy\FuzzyPreferenceProgramming.cs" />
+    <Compile Include="Fuzzy\Interval.cs" />
+    <Compile Include="Fuzzy\IntervalPairwiseComparisonMatrix.cs" />
+    <Compile Include="Fuzzy\IntervalPreferenceProgrammingSolution.cs" />
+    <Compile Include="Fuzzy\NonLinearFuzzyPreferenceProgramming.cs" />
+    <Compile Include="Fuzzy\PairwiseComparisonSolution.cs" />
+    <Compile Include="Network\Cluster.cs" />
+    <Compile Include="Network\ClusterElement.cs" />
+    <Compile Include="Network\CrossClusterDependency.cs" />
+    <Compile Include="Network\INetworkElement.cs" />
+    <Compile Include="Network\NetworkStructure.cs" />
+    <Compile Include="PairwiseComparisonTask.cs" />
+    <Compile Include="Precise\CovarianceReproachResolutionStrategy.cs" />
+    <Compile Include="Precise\LeastSquaresResolutionStrategy.cs" />
+    <Compile Include="Precise\MainEigenvectorResolutionStrategy.cs" />
+    <Compile Include="Precise\PairwiseComparisonMatrix.cs" />
+    <Compile Include="Precise\TruncatedMatrixCiReproachResolutionStrategy.cs" />
+    <Compile Include="Precise\X2ReproachResolutionStrategy.cs" />
+    <Compile Include="Precise\X2ResolutionStrategy.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerbalJudgement.cs" />
+    <Compile Include="VerbalJudgementChangedEventArgs.cs" />
+    <Compile Include="VerbalMatrix.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AnalyticHierarchyProcessDSS.Entities\AnalyticHierarchyProcessDSS.Entities.csproj">
+      <Project>{066a266d-427a-4675-b553-cba8204566fa}</Project>
+      <Name>AnalyticHierarchyProcessDSS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnalyticHierarchyProcessDSS.MathEngine\AnalyticHierarchyProcessDSS.WolframEngine.csproj">
+      <Project>{6be64520-ece9-4244-a2c8-81af55b0c344}</Project>
+      <Name>AnalyticHierarchyProcessDSS.WolframEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
