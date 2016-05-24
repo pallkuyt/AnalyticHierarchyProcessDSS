@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticHierarchyProcessDSS.Core", "AnalyticHierarchyProcessDSS.Core\AnalyticHierarchyProcessDSS.Core.csproj", "{5A777C9A-2382-4D5A-8D65-8BC7A6C9871F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticHierarchyProcessDSS.WolframEngine", "AnalyticHierarchyProcessDSS.MathEngine\AnalyticHierarchyProcessDSS.WolframEngine.csproj", "{6BE64520-ECE9-4244-A2C8-81AF55B0C344}"
@@ -10,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticHierarchyProcessDSS.Tests", "AnalyticHierarchyProcessDSS.Tests\AnalyticHierarchyProcessDSS.Tests.csproj", "{490480EF-3B22-4298-AC92-D42CE299A390}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticHierarchyProcessDSS.TestUI", "AnalyticHierarchyProcessDSS.TestUI\AnalyticHierarchyProcessDSS.TestUI.csproj", "{398E4EE9-DB53-4090-95EE-28894824C4E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalLibs", "ExternalLibs", "{F2453211-BF1C-4015-8726-95847742F87E}"
+	ProjectSection(SolutionItems) = preProject
+		ExternalLibs\Wolfram.NETLink.dll = ExternalLibs\Wolfram.NETLink.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
