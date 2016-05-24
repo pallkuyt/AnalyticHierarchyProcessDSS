@@ -16,6 +16,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using AnalyticHierarchyProcessDSS.WolframEngine.Alpha;
 
 namespace AnalyticHierarchyProcessDSS.TestUI
 {
@@ -30,7 +31,7 @@ namespace AnalyticHierarchyProcessDSS.TestUI
 
             IUnityContainer container = new UnityContainer();
             container.RegisterInstance<IUnityContainer>(container);
-            container.RegisterInstance<IEvaluationEngine>(new WolframMathematicaEvaluationEngine());
+            container.RegisterInstance<IEvaluationEngine>(new WolframAlphaEvaluationEngine());
             container.RegisterInstance<NetworkStructure>(new NetworkStructure());
             container.RegisterType<IWeightsResolutionStrategy, MainEigenvectorResolutionStrategy>("EM");
             container.RegisterType<IWeightsResolutionStrategy, LeastSquaresResolutionStrategy>("LSM");

@@ -10,8 +10,5 @@ namespace AnalyticHierarchyProcessDSS.Core.Fuzzy
 {
     class NonLinearFuzzyPreferenceProgramming
     {
-        private readonly IEvaluationEngine _engine = new WolframMathematicaEvaluationEngine();
-
-        private FuzzyPairwiseComparisonMatrix _matrix;
     }
 }

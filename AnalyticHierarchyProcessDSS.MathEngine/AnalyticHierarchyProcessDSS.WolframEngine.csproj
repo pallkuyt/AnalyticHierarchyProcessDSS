@@ -66,7 +66,6 @@
     <Compile Include="MathematicalConstants.cs" />
     <Compile Include="Alpha\WolframAlphaEvaluationEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Mathematica\WolframMathematicaEvaluationEngine.cs" />
     <Compile Include="Mathematica\X2MinimizationStrategy.cs" />
     <Compile Include="UnityFactory.cs" />
   </ItemGroup>
